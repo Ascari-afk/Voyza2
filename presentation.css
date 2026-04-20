@@ -1,0 +1,113 @@
+/* ── Presentation tab overrides ── */
+.pres-wrap { font-family: 'Satoshi', sans-serif; }
+.pres-hero {
+    background: radial-gradient(ellipse 80% 55% at 50% 40%, rgba(79,152,163,0.13) 0%, transparent 68%);
+    border: 1px solid #21262d; border-radius: 16px;
+    padding: 3rem 2.5rem 2.5rem; text-align: center;
+    margin-bottom: 2rem; position: relative; overflow: hidden;
+}
+.pres-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(45,55,72,.3) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(45,55,72,.3) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black, transparent);
+    pointer-events: none;
+}
+.pres-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 16px; background: rgba(79,152,163,.1);
+    border: 1px solid rgba(79,152,163,.32); border-radius: 9999px;
+    font-size: .69rem; font-weight: 700; letter-spacing: .09em;
+    text-transform: uppercase; color: #4f98a3; margin-bottom: 1rem;
+}
+.pres-badge-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: #4f98a3;
+    animation: pdot 2s ease-in-out infinite; display: inline-block;
+}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.55)}}
+.pres-title {
+    font-family: 'Cabinet Grotesk', sans-serif !important;
+    font-size: clamp(1.8rem, 4vw, 3.1rem); font-weight: 900;
+    letter-spacing: -.025em; line-height: 1.1;
+    color: #e2e8f0; margin-bottom: .85rem;
+}
+.pres-gradient {
+    background: linear-gradient(135deg,#4f98a3 0%,#7dd3d8 50%,#a78bfa 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.pres-sub {
+    font-size: .95rem; color: #8b98a8; max-width: 580px;
+    margin: 0 auto 1.4rem; line-height: 1.7;
+    text-align: center;
+}
+.pres-tech-row { display:flex; flex-wrap:wrap; justify-content:center; gap:7px; margin-bottom:1.4rem; }
+.pres-tech {
+    padding: 4px 11px; background: #161b22; border: 1px solid #2d3748;
+    border-radius: 6px; font-size: .72rem; font-weight: 500; color: #8b98a8;
+    font-family: monospace;
+}
+.pres-stat-row { display:flex; gap:.85rem; justify-content:center; flex-wrap:wrap; }
+.pres-stat {
+    flex:1; min-width:130px; max-width:180px;
+    padding:1rem .75rem; background:#161b22; border:1px solid #2d3748;
+    border-radius:12px; text-align:center;
+}
+.pres-stat-val {
+    font-family:'Cabinet Grotesk',sans-serif!important;
+    font-size:1.85rem; font-weight:900; letter-spacing:-.04em;
+    line-height:1; color:#4f98a3; margin-bottom:.28rem;
+}
+.pres-stat-lbl { font-size:.74rem; color:#8b98a8; line-height:1.4; }
+/* ── Pillar cards ── */
+.pillar-card {
+    background:#0e1117; border:1px solid #2d3748; border-radius:14px;
+    padding:1.5rem 1.4rem; height:100%; position:relative; overflow:hidden;
+    transition: border-color .18s;
+}
+.pillar-accent { position:absolute; top:0; left:0; right:0; height:3px; border-radius:14px 14px 0 0; }
+.pillar-num {
+    position:absolute; top:.8rem; right:1rem;
+    font-family:'Cabinet Grotesk',sans-serif; font-size:3rem;
+    font-weight:900; line-height:1; letter-spacing:-.05em; color:#21262d;
+}
+.pillar-icon {
+    width:42px; height:42px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.3rem; margin-bottom:.85rem;
+}
+.pillar-lbl { font-size:.67rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:.32rem; }
+.pillar-title { font-family:'Cabinet Grotesk',sans-serif!important; font-size:1.08rem; font-weight:800; letter-spacing:-.02em; margin-bottom:.5rem; color:#e2e8f0; }
+.pillar-desc { font-size:.83rem; color:#8b98a8; line-height:1.7; margin-bottom:.85rem; }
+.pillar-tags { display:flex; flex-wrap:wrap; gap:5px; }
+.pillar-tag { padding:3px 9px; background:#161b22; border:1px solid #2d3748; border-radius:9999px; font-size:.68rem; font-family:monospace; color:#8b98a8; }
+.p-cyan  .pillar-lbl{color:#4f98a3} .p-cyan  .pillar-icon{background:rgba(79,152,163,.12);color:#4f98a3} .p-cyan  .pillar-accent{background:#4f98a3}
+.p-purple.pillar-lbl{color:#a78bfa} .p-purple .pillar-icon{background:rgba(167,139,250,.1);color:#a78bfa} .p-purple .pillar-accent{background:#a78bfa}
+.p-gold  .pillar-lbl{color:#f59e0b} .p-gold  .pillar-icon{background:rgba(245,158,11,.1);color:#f59e0b} .p-gold  .pillar-accent{background:#f59e0b}
+.p-green .pillar-lbl{color:#34d399} .p-green .pillar-icon{background:rgba(52,211,153,.1);color:#34d399} .p-green .pillar-accent{background:#34d399}
+/* ── Metric cards ── */
+.kpi-card {
+    background:#161b22; border:1px solid #2d3748; border-radius:12px;
+    padding:1.1rem 1rem; position:relative; overflow:hidden;
+}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.kpi-c::before{background:#4f98a3} .kpi-p::before{background:#a78bfa}
+.kpi-g::before{background:#f59e0b} .kpi-gr::before{background:#34d399}
+.kpi-val{font-family:'Cabinet Grotesk',sans-serif!important;font-size:1.85rem;font-weight:900;letter-spacing:-.04em;line-height:1;margin-bottom:.25rem;}
+.kpi-c .kpi-val{color:#4f98a3} .kpi-p .kpi-val{color:#a78bfa} .kpi-g .kpi-val{color:#f59e0b} .kpi-gr .kpi-val{color:#34d399}
+.kpi-lbl{font-size:.8rem;color:#8b98a8;} .kpi-sub{font-size:.69rem;color:#4a5568;margin-top:.18rem;}
+/* ── Pipeline ── */
+.pipe-wrap{background:#161b22;border:1px solid #2d3748;border-radius:14px;padding:1.5rem;margin-top:1.5rem;}
+.pipe-hd{font-family:'Cabinet Grotesk',sans-serif!important;font-size:1rem;font-weight:700;color:#e2e8f0;margin-bottom:1rem;}
+.pipe-steps{display:flex;overflow-x:auto;padding-bottom:4px;}
+.pipe-step{flex:1;min-width:90px;display:flex;flex-direction:column;align-items:center;gap:.42rem;padding:.6rem .35rem;position:relative;text-align:center;}
+.pipe-step::after{content:'→';position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:#4a5568;font-size:.9rem;}
+.pipe-step:last-child::after{display:none;}
+.pipe-ico{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;background:#0e1117;border:1px solid #2d3748;flex-shrink:0;}
+.pipe-lbl{font-size:.67rem;font-weight:600;color:#8b98a8;line-height:1.35;}
+/* ── Section labels ── */
+.sec-label{display:inline-flex;align-items:center;gap:8px;font-size:.69rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4f98a3;margin-bottom:.38rem;}
+.sec-label::before{content:'';display:inline-block;width:16px;height:2px;background:#4f98a3;border-radius:1px;}
+.sec-title{font-family:'Cabinet Grotesk',sans-serif!important;font-size:1.9rem;font-weight:800;letter-spacing:-.03em;color:#e2e8f0;margin-bottom:.38rem;line-height:1.15;}
+.sec-desc{font-size:.87rem;color:#8b98a8;max-width:60ch;line-height:1.7;margin-bottom:1.6rem;}
+divider-pres{border:none;border-top:1px solid #21262d;margin:2rem 0;}
