@@ -27,6 +27,7 @@ from src.graph_blockchain_style import (
 from src.hdc_encoding import build_edge_hv_dict, D
 from src.config import N_SAMPLES_SHORTEST_PATH
 from src.routing_engine import build_node_spatial_index, get_routes_from_latlon
+from src.decision_simulation import render_industrial_tab
 # ─────────────────────────────────────────────
 # Cached load
 # ─────────────────────────────────────────────
@@ -666,6 +667,7 @@ def main():
     tab_labels = [
         "🗺 Map", "📊 Graph Stats", "⚡ Path Comparison",
         "🧭 Dynamic Routing", "🤖 RL Training", "🧠 HDC Encoding",
+        "🏭 Industrial Demo",
     ]
     if present_mode:
         tab_labels = ["🎯 Presentation"] + tab_labels
@@ -681,6 +683,7 @@ def main():
     tab_routing  = tabs[3 + off]
     tab_rl       = tabs[4 + off]
     tab_hdc      = tabs[5 + off]
+    tab_industrial = tabs[6 + off]
     # ══════════════════════════════
     # Tab 1 — Map
     # ══════════════════════════════
@@ -822,5 +825,7 @@ def main():
                         f"Off-diagonal ≈ 0 = near-orthogonal → "
                         f"edges แยกแยะกันได้ดี"
                     )
+    with tab_industrial:
+        render_industrial_tab()
 if __name__ == "__main__":
     main()
